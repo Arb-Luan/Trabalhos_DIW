@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Repositório</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="text-center bg-dark text-light py-4">
+        <h1>Detalhes do Repositório</h1>
+    </header>
+    <nav>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="index.html">Página Inicial</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <div class="container">
+        <!-- Seção: Informações do Repositório -->
+        <section id="informacoes-repositorio" class="my-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Descrição:</h2>
+                    <p id="descricao">Este é meu primeiro projeto da disciplina Desenvolvimento de Interfaces Web</p>
+                    <h2>Data de Criação:</h2>
+                    <p id="dataCriacao">03/04/2024</p>
+                    <h2>Proprietário:</h2>
+                    <p id="proprietario">Luan Henrique G. Melo</p>
+                    <img id="avatar" src="avatar.jpg" alt="Avatar do Proprietário">
+                    <h2>URL de Acesso:</h2>
+                    <p id="url"><a href="#" target="_blank">https://github.com/Arb-Luan/Trabalhos_DIW</a></p>
+                    <h2>Linguagem Principal:</h2>
+                    <p id="linguagem">Html e Css</p>
+                    <h2>Lista de Tópicos:</h2>
+                    <p id="topicos">HTML, CSS</p>
+                    <h2>Estrelas:</h2>
+                    <p id="estrelas"></p>
+                    <h2>Observadores:</h2>
+                    <p id="observadores">5</p>
+                    <h2>Forks:</h2>
+                    <p id="forks">(Inserir sugestões de melhoria aqui)</p>
+                    <h2>Tipo de Licença:</h2>
+                    <p id="Apache License"></p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção: Avaliações -->
+        <section id="avaliacoes" class="my-5">
+            <h2>Avaliações-Necessário JS</h2>
+            <!-- Formulário de Avaliação -->
+            <form id="formularioAvaliacao">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div>
+                    <label for="avaliacao">Avaliação:</label>
+                    <textarea id="avaliacao" required></textarea>
+                </div>
+                <button type="submit">Enviar Avaliação</button>
+            </form>
+            <!-- Lista de Avaliações -->
+            <div id="listaAvaliacoes">
+                <!-- As avaliações serão exibidas aqui -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="text-center bg-dark text-light py-4">
+        <p>&copy; 2024 Meu Site Pessoal. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Função para adicionar uma avaliação
+        document.getElementById('formularioAvaliacao').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+            // Obtém os valores do formulário
+            var nome = document.getElementById('nome').value;
+            var avaliacao = document.getElementById('avaliacao').value;
+            // Cria um novo elemento de avaliação
+            var novaAvaliacao = document.createElement('div');
+            novaAvaliacao.innerHTML = '<strong>' + nome + ':</strong> ' + avaliacao;
+            // Adiciona a nova avaliação à lista de avaliações
+            document.getElementById('listaAvaliacoes').appendChild(novaAvaliacao);
+            // Limpa os campos do formulário
+            document.getElementById('nome').value = '';
+            document.getElementById('avaliacao').value = '';
+        });
+    </script>
+</body>
+</html>
